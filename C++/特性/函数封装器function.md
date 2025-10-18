@@ -86,7 +86,7 @@ int main(int argc, char* argv[])
 	std::cout << f5.target_type().name() << std::endl;
 	std::cout << f4.target_type().name() << std::endl;
 
-	//可使用target查看封装的函数指针地址（模板参数不能使用类型别名声明的类型）
+	//可使用target查看封装的函数指针地址(模板参数不能使用类型别名声明的类型)
 	auto p1 = f1.target<void(*)()>();
 	std::cout << p1 << std::endl;
 	auto p7 = f7.target<const char* const(*)()>();
