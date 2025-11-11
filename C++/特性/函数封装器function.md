@@ -102,6 +102,49 @@ int main(int argc, char* argv[])
 ```
 &emsp;
 
+# 仿函数与lambda表达式
+
+&emsp;
+
+```cpp
+#include <iostream>
+#include <string>
+#include <functional>
+#include <algorithm>
+
+// 重载了函数调用运算符(operator())而拥有类似函数调用功能的类被称为仿函数
+class String
+{
+public:
+
+	std::string operator()(const char* str)
+	{
+		return std::string(str);
+	}
+};
+
+int main(int argc, char* argv[])
+{
+	String myString;
+
+	std::function<std::string(const char*)> toString = myString;
+	std::string str{ toString("Hello, World !") };
+
+	//输出 "Hello, World !"
+	std::cout << str << std::endl;
+
+	//反转字符串
+	std::string reStr;
+	auto reversePred = [&reStr](const char ch1) { reStr.push_back(ch1); };
+	std::function<void(const char)> rePred = reversePred;
+
+	std::for_each(str.rbegin(), str.rend(), rePred);
+
+	//输出"! dlroW ,olleH"
+	std::cout << reStr << std::endl;
+}
+```
+
 # 其他
 &emsp;
 
