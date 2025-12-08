@@ -9,7 +9,7 @@
 1. 进入GRUB，选择旧内核版本
 2. 查看网络状态（无线网卡在旧版本下可以识别，且网络状态正常）
 3. 重启，进入GRUB选择Recovery状态的旧内核版本
-4. 点击Enable etworking和fix broken packages并等待运行结束
+4. 点击Enable networking和fix broken packages并等待运行结束
 5. reboot重启，再次选择新内核版本启动，此时网卡识别正常，网络状态正常
 
 &emsp;
