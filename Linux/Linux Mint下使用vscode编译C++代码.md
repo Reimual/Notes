@@ -1,4 +1,4 @@
-# Ubuntu/Mint下使用vscode编译C/C++代码
+# Linux Mint下使用vscode编译C++代码
 
 &emsp;
 
