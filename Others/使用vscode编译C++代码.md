@@ -1,8 +1,4 @@
-# Linux Mint下使用vscode编译C++代码
-
-&emsp;
-
-## vscode
+# vscode
 
 &emsp;
 
@@ -10,7 +6,7 @@
 
 &emsp;
 
-## tasks.json
+# tasks.json
 
 &emsp;
 
@@ -48,7 +44,7 @@
 
 &emsp;
 
-## launch.json
+# launch.json
 
 &emsp;
 
