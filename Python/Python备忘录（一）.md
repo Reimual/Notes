@@ -1,11 +1,7 @@
 在此记录一些Python中比较常用到的方法技巧（持续更新）
 
-&emsp;
-
 # 生成器
 ## 通过列表生成式构建一个生成器
-
-&emsp;
 
 ```python
 a = [x * x for x in range(10)]    # 列表生成式子生成一个list
@@ -19,11 +15,7 @@ print(g)
 # <generator object <genexpr> at 0x1022ef630>
 ```
 
-&emsp;
-
 ## 编写一个简单的生成器
-
-&emsp;
 
 ```python
 def fib(max):
@@ -63,15 +55,9 @@ print(next(fib(10)))
 print(next(fib(10)))
 ```
 
-&emsp;
-
 # map/reduce
 
-&emsp;
-
 ## map
-
-&emsp;
 
 ```python
 def f(i):
@@ -88,11 +74,7 @@ print(list(y))
 # [1, 4, 9, 16, 25, 36, 49, 64]
 ```
 
-&emsp;
-
 ## reduce
-
-&emsp;
 
 ```python
 # reduce包含在functools包中，使用时需导入
@@ -123,11 +105,7 @@ print(ans)
 # 13579
 ```
 
-&emsp;
-
 # filter
-
-&emsp;
 
 ```python
 def is_odd(n):
@@ -139,11 +117,7 @@ print(list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15])))
 # [1, 5, 9, 15]
 ```
 
-&emsp;
-
 # 装饰器
-
-&emsp;
 
 ```python
 from functools import wraps
@@ -151,7 +125,7 @@ from functools import wraps
 # 一、装饰器的基本语法
 
 def log(f):
-    # 如果需要打印真正执行操作的函数名而不是wrapper函数名，则需要导入functools里的wraps
+    # 如果需要打印真正执行操作的函数名而不是wrapper函数名，则需要导入functiools里的wraps
     @wraps(f)
     
     # 如果需要添加装饰器的函数含有参数，则wrapper也需要填入参数（*args, **kw）。
@@ -195,11 +169,7 @@ print(func([x for x in range(10)]))
 # [0, 2, 4, 6, 8]
 ```
 
-&emsp;
-
 # 偏函数
-
-&emsp;
 
 ```python
 from functools import partial
@@ -217,11 +187,7 @@ print(int2('10010'))
 # 18
 ```
 
-&emsp;
-
 # \_\_slots\_\_
-
-&emsp;
 
 ```python
 # python的灵活性可以使类中的属性能够随意添加，为了保证代码的工整和已读可在类中添加一个__slots__变量
@@ -242,11 +208,7 @@ print(s.university)
 # 报出AttributeError异常，提示Student类中没有"university"属性，也无法设置新属性
 ```
 
-&emsp;
-
 # @property
-
-&emsp;
 
 ```python
 # python中对于类的属性getter/setter方法可用@property来代替，可读性更高。
@@ -266,11 +228,7 @@ class Student(object):
 
 ```
 
-&emsp;
-
 # 枚举类
-
-&emsp;
 
 ```python
 from enum import Enum
@@ -311,11 +269,7 @@ print(Month['Feb'] == Month.Feb)
 # True
 ```
 
-&emsp;
-
 # StringIO和BytesIO
-
-&emsp;
 
 ```Python
 from io import StringIO, BytesIO
@@ -352,11 +306,7 @@ print(b.getvalue())
 # b'\xe4\xb8\xad\xe6\x96\x87'
 ```
 
-&emsp;
-
 # JSON
-
-&emsp;
 
 ```python
 # 如果我们要在不同的编程语言之间传递对象，就必须把对象序列化为标准格式，比如XML。但更好的方法是序列化为JSON，因为JSON表示出来就是一个字符串，可以被所有语言读取，也可以方便地存储到磁盘或者通过网络传输。JSON不仅是标准格式，并且比XML更快，而且可以直接在Web页面中读取，非常方便。
@@ -411,5 +361,3 @@ print(stu.name, stu.name, stu.score)
 # 打印：
 # Bob Bob 88
 ```
-
-&emsp;

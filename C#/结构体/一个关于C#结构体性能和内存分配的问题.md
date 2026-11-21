@@ -1,7 +1,5 @@
 在菜鸟教程上学习C\#结构体这一节时(https://www.runoob.com/csharp/csharp-struct.html)，里面提到了一个关于结构体性能和内存分配的问题：“*结构体是值类型且在栈上分配内存；而类是引用类型，可能涉及更多的内存开销和管理*。”于是在vs2022环境下对代码进行了反汇编。
 
-&emsp;
-
 ```cs
 using System;
 
@@ -33,7 +31,6 @@ namespace HelloWorld
     }
 }
 ```
-&emsp;
 
 ```asm
 # 反汇编代码
@@ -78,6 +75,5 @@ namespace HelloWorld
 
         }
 ```
-&emsp;
 
 由于C#代码运行在.net运行时环境上（类似于jvm虚拟机环境），所以无法直接查看进程的实际内存情况。可以看到结构体对象分配在栈上，并且可以得出`dword ptr [ebp-3Ch]`与`dword ptr [ebp-40h]`均为指针，其中`8B5623Ch`为字符串常量的地址。而类对象则分配在堆上，`dword ptr [ebp-44h]`为类对象的地址。

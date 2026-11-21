@@ -1,14 +1,8 @@
 # vscode
 
-&emsp;
-
 首先要说明vscode不是IDE，因此本身没有所谓的一键配置、一键编译/运行、大量可视化项目操作选项等功能，实际上是一个拥有丰富插件且可定制化极高的文本编辑器。当我们创建完C++文件后按照在IDE（VS2022等）思路下会下意识的使用快捷键一键编译运行，这时vscode提示你要提供launch.json和tasks.json，这两个文件就是vscode编译C++代码时所要用到的配置文件。当然如果你只是将vscode当作一个文本编辑器，并依然使用终端命令来编译、调试与运行，也是可以的。
 
-&emsp;
-
 # tasks.json
-
-&emsp;
 
 ```json
 {
@@ -38,15 +32,9 @@
 }
 ```
 
-&emsp;
-
 值得一提的是vscode默认是不包含tasks.json的，如果直接编译运行的话仍然提示要提示launch.json
 
-&emsp;
-
 # launch.json
-
-&emsp;
 
 ```json
 {
@@ -80,7 +68,5 @@
   ]
 }
 ```
-
-&emsp;
 
 当两个配置文件都编写完毕后，将其放入.vscode文件夹中，然后回到C++代码中即可正常编译、调试与运行。关于tasks.json和tasks.json其他高级命令与用法可参考微软vscode官方文档。

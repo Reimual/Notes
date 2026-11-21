@@ -1,7 +1,5 @@
 # 基本形式
 
-&emsp;
-
 ```cpp
 #include <iostream>
 #include <functional>
@@ -102,11 +100,8 @@ int main(int argc, char* argv[])
 	return 0;
 }
 ```
-&emsp;
 
 # 仿函数与lambda表达式
-
-&emsp;
 
 ```cpp
 #include <iostream>
@@ -147,10 +142,6 @@ int main(int argc, char* argv[])
 }
 ```
 
-&emsp;
-
 # 其他
-
-&emsp;
 
 当遇到重载函数需要用std::function封装的情况时，为避免编译时出现二义性问题，请将它们改写为lambda表达式或者函数指针的形式后再进行封装。
